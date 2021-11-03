@@ -10,7 +10,7 @@ def save_screen(digit, sc):
     img = img.rotate(90, expand=True)
     img = img.transpose(Image.FLIP_TOP_BOTTOM)
     filename = str(uuid.uuid4())
-    img.save(digit + "/" + filename + ".png", "PNG")
+    img.save("data/" + digit + "/" + filename + ".png", "PNG")
 
     global IMG_SAVED_COUNTER
     IMG_SAVED_COUNTER += 1
