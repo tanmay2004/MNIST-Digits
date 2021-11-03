@@ -15,18 +15,20 @@ def save_screen(digit, sc):
     global IMG_SAVED_COUNTER
     IMG_SAVED_COUNTER += 1
 
-pygame.init()
-
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 WIDTH = 2 # Subject to Change
-DIGIT = input("\nEnter a digit: ")
+
+print("\nPress SPACE each time to save your digit drawing!")
+DIGIT = input("Enter digit you want to draw: ")
 IMG_SAVED_COUNTER = 0
 
 try:
     os.mkdir(DIGIT)
 except:
     pass
+
+pygame.init()
 
 pygame.display.set_caption("Personalized Digit Recognition!")
 screen = pygame.display.set_mode((400, 400), 0, 32)
@@ -67,6 +69,6 @@ while running:
 
     pygame.display.update()
 
-print(f"A total of {IMG_SAVED_COUNTER} handwritten digit samples have been saved under the '{DIGIT}' label!")
+print(f"\nA total of {IMG_SAVED_COUNTER} handwritten digit samples have been saved under the '{DIGIT}' label!")
 pygame.quit()
 sys.exit()
